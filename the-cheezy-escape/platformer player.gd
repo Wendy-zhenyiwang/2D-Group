@@ -38,7 +38,9 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		
-		$annimation.play("jump_up_left")
+		if direction == -1:
+			$annimation.play("jump_up_left")
+		if direction == 1:
+			$annimation.play("jump_up_right")
 
 	move_and_slide()

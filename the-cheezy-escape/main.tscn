@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dtu2o8w8bl423"]
+[gd_scene load_steps=22 format=3 uid="uid://dtu2o8w8bl423"]
 
 [ext_resource type="Texture2D" uid="uid://ctbqp0v1q863k" path="res://MAP.png" id="1_5wk2p"]
 [ext_resource type="PackedScene" uid="uid://bpxh34uy2f0wy" path="res://player.tscn" id="1_dv6bk"]
@@ -20,8 +20,6 @@ size = Vector2(292.792, 40.8279)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyobd"]
 size = Vector2(1430.8, 258.273)
-
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_60xyo"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_30vec"]
 
@@ -126,10 +124,6 @@ position = Vector2(1746.67, 1327.24)
 rotation = -0.778417
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_kyobd")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Level 1"]
-position = Vector2(-3002.58, -1322.81)
-shape = SubResource("ConvexPolygonShape2D_60xyo")
 
 [node name="Level 2" type="StaticBody2D" parent="Map"]
 physics_material_override = SubResource("PhysicsMaterial_30vec")
@@ -237,4 +231,4 @@ scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_t7hvc")
 
 [node name="player" parent="." instance=ExtResource("1_dv6bk")]
-position = Vector2(1641, -462)
+position = Vector2(36, -4)
