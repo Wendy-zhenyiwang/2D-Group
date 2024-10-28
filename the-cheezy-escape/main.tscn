@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dtu2o8w8bl423"]
+[gd_scene load_steps=23 format=3 uid="uid://dtu2o8w8bl423"]
 
 [ext_resource type="Texture2D" uid="uid://ctbqp0v1q863k" path="res://MAP.png" id="1_5wk2p"]
 [ext_resource type="PackedScene" uid="uid://bpxh34uy2f0wy" path="res://player.tscn" id="1_dv6bk"]
@@ -21,10 +21,12 @@ size = Vector2(292.792, 40.8279)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyobd"]
 size = Vector2(1430.8, 258.273)
 
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_60xyo"]
+
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_30vec"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lwelj"]
-size = Vector2(3902.28, 125.15)
+size = Vector2(3622.32, 125.15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_riupp"]
 size = Vector2(288.876, 39.995)
@@ -46,8 +48,17 @@ size = Vector2(383.281, 210.638)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vs3eq"]
 size = Vector2(728.064, 51.4933)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_viknb"]
-size = Vector2(182.35, 97.1118)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ci8e"]
+size = Vector2(182.308, 96.3213)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y5upx"]
+size = Vector2(3197.72, 133.315)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7hvc"]
+size = Vector2(289.626, 42.328)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hfqjk"]
+size = Vector2(177.309, 596.833)
 
 [node name="main" type="Node2D"]
 
@@ -116,26 +127,30 @@ rotation = -0.778417
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_kyobd")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Level 1"]
+position = Vector2(-3002.58, -1322.81)
+shape = SubResource("ConvexPolygonShape2D_60xyo")
+
 [node name="Level 2" type="StaticBody2D" parent="Map"]
 physics_material_override = SubResource("PhysicsMaterial_30vec")
 
 [node name="Level 2 Floor" type="CollisionShape2D" parent="Map/Level 2"]
-position = Vector2(-126.732, 613.996)
+position = Vector2(-266.712, 613.996)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_lwelj")
 
 [node name="Light 1" type="CollisionShape2D" parent="Map/Level 2"]
-position = Vector2(1932.14, 367.281)
+position = Vector2(1936.39, 366.282)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_riupp")
 
 [node name="Light 2" type="CollisionShape2D" parent="Map/Level 2"]
-position = Vector2(1416.13, 205.304)
+position = Vector2(1413.8, 205.304)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_riupp")
 
 [node name="Light 3" type="CollisionShape2D" parent="Map/Level 2"]
-position = Vector2(-70.1982, 34.995)
+position = Vector2(-69.9902, 34.995)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_riupp")
 
@@ -167,7 +182,7 @@ scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_yo8nu")
 
 [node name="Paste Corner 2" type="CollisionShape2D" parent="Map/Level 2"]
-position = Vector2(-447.937, 335.953)
+position = Vector2(-452.603, 354.617)
 rotation = -0.47822
 scale = Vector2(1, 1)
 skew = 0.47822
@@ -176,13 +191,50 @@ shape = SubResource("RectangleShape2D_cruyf")
 [node name="Level 3" type="StaticBody2D" parent="Map"]
 physics_material_override = SubResource("PhysicsMaterial_cgd4f")
 
-[node name="Level 3 Floor (Brush)" type="CollisionShape2D" parent="Map/Level 3"]
+[node name="Level 3 Floor (Brush Body)" type="CollisionShape2D" parent="Map/Level 3"]
 position = Vector2(-1717.17, -975.279)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_vs3eq")
 
-[node name="Brush Head" type="CollisionShape2D" parent="Map/Level 3/Level 3 Floor (Brush)"]
-position = Vector2(270.524, 0.520508)
-shape = SubResource("RectangleShape2D_viknb")
+[node name="Brush Head" type="CollisionShape2D" parent="Map/Level 3"]
+position = Vector2(-1444.3, -974.363)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_3ci8e")
+
+[node name="Level 3 Floor (Rightside)" type="CollisionShape2D" parent="Map/Level 3"]
+position = Vector2(482.181, -759.56)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_y5upx")
+
+[node name="Light 1" type="CollisionShape2D" parent="Map/Level 3"]
+position = Vector2(-1262.32, -1437.3)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_t7hvc")
+
+[node name="Light 2" type="CollisionShape2D" parent="Map/Level 3"]
+position = Vector2(-692.902, -1353.14)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_t7hvc")
+
+[node name="Light 3" type="CollisionShape2D" parent="Map/Level 3"]
+position = Vector2(-58.3251, -1353.14)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_t7hvc")
+
+[node name="Light 4" type="CollisionShape2D" parent="Map/Level 3"]
+position = Vector2(-58.3251, -1353.14)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_t7hvc")
+
+[node name="Colum1" type="CollisionShape2D" parent="Map/Level 3"]
+position = Vector2(457.269, -998.526)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_hfqjk")
+
+[node name="Light 5" type="CollisionShape2D" parent="Map/Level 3"]
+position = Vector2(-58.3251, -1353.14)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_t7hvc")
 
 [node name="player" parent="." instance=ExtResource("1_dv6bk")]
+position = Vector2(1641, -462)
