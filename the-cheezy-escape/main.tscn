@@ -164,7 +164,7 @@ scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_178q6")
 
 [node name="Paste Corner1" type="CollisionShape2D" parent="Map/Level 2"]
-position = Vector2(246.341, 418.473)
+position = Vector2(256.63, 454.936)
 rotation = 0.715585
 scale = Vector2(1, 1)
 skew = -0.300197
@@ -176,7 +176,7 @@ scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_yo8nu")
 
 [node name="Paste Corner 2" type="CollisionShape2D" parent="Map/Level 2"]
-position = Vector2(-452.603, 354.617)
+position = Vector2(-475.933, 370.948)
 rotation = -0.47822
 scale = Vector2(1, 1)
 skew = 0.47822
