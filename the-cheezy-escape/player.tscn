@@ -1,8 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://bpxh34uy2f0wy"]
+[gd_scene load_steps=16 format=3 uid="uid://bpxh34uy2f0wy"]
 
-[ext_resource type="Script" path="res://player.gd" id="2_46h8p"]
-[ext_resource type="Texture2D" uid="uid://bo0ywmggqftxi" path="res://rat/rat.png" id="2_eudtn"]
-[ext_resource type="Texture2D" uid="uid://d0yjt7nu1mba7" path="res://rat/正面-02.png" id="2_p11w1"]
+[ext_resource type="Script" path="res://platformer player.gd" id="1_ae2v3"]
+[ext_resource type="Texture2D" uid="uid://bo0ywmggqftxi" path="res://rat/rat/rat.png" id="2_eudtn"]
+[ext_resource type="Texture2D" uid="uid://d0yjt7nu1mba7" path="res://rat/rat/正面-02.png" id="2_p11w1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ruqco"]
 atlas = ExtResource("2_p11w1")
@@ -102,8 +102,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="player" type="Node2D"]
-script = ExtResource("2_46h8p")
+[sub_resource type="CircleShape2D" id="CircleShape2D_05pfd"]
+radius = 58.8558
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_ae2v3")
 
 [node name="annimation" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 6)
@@ -113,3 +116,7 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -9)
+shape = SubResource("CircleShape2D_05pfd")
