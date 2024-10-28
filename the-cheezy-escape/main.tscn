@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dtu2o8w8bl423"]
+[gd_scene load_steps=19 format=3 uid="uid://dtu2o8w8bl423"]
 
 [ext_resource type="Texture2D" uid="uid://ctbqp0v1q863k" path="res://MAP.png" id="1_5wk2p"]
 [ext_resource type="PackedScene" uid="uid://bpxh34uy2f0wy" path="res://player.tscn" id="1_dv6bk"]
@@ -21,6 +21,34 @@ size = Vector2(292.792, 40.8279)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyobd"]
 size = Vector2(1430.8, 258.273)
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_30vec"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lwelj"]
+size = Vector2(3902.28, 125.15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_riupp"]
+size = Vector2(288.876, 39.995)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_178q6"]
+size = Vector2(648.575, 242.632)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iigsc"]
+size = Vector2(403.263, 276.324)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yo8nu"]
+size = Vector2(774.891, 300.125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cruyf"]
+size = Vector2(383.281, 210.638)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cgd4f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vs3eq"]
+size = Vector2(728.064, 51.4933)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_viknb"]
+size = Vector2(182.35, 97.1118)
+
 [node name="main" type="Node2D"]
 
 [node name="Map" type="Sprite2D" parent="."]
@@ -28,64 +56,133 @@ position = Vector2(788, -789)
 scale = Vector2(0.428632, 0.428632)
 texture = ExtResource("1_5wk2p")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Map"]
+[node name="Level 1" type="StaticBody2D" parent="Map"]
 
-[node name="Level 1" type="CollisionShape2D" parent="Map/StaticBody2D"]
+[node name="Level 1 Floor" type="CollisionShape2D" parent="Map/Level 1"]
 position = Vector2(0.20813, 2005.05)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_mfr3b")
 
-[node name="Box 1" type="CollisionShape2D" parent="Map/StaticBody2D"]
+[node name="Box 1" type="CollisionShape2D" parent="Map/Level 1"]
 position = Vector2(-1339.14, 1853.57)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_iveha")
 
-[node name="Box 2" type="CollisionShape2D" parent="Map/StaticBody2D"]
+[node name="Box 2" type="CollisionShape2D" parent="Map/Level 1"]
 position = Vector2(-1210.83, 1684.43)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_iveha")
 
-[node name="Mouse Ear Left" type="CollisionShape2D" parent="Map/StaticBody2D"]
+[node name="Mouse Ear Left" type="CollisionShape2D" parent="Map/Level 1"]
 position = Vector2(-1019.52, 1570.11)
 shape = SubResource("CircleShape2D_2xf3b")
 
-[node name="Mouse Ear Right" type="CollisionShape2D" parent="Map/StaticBody2D"]
+[node name="Mouse Ear Right" type="CollisionShape2D" parent="Map/Level 1"]
 position = Vector2(-585.584, 1574.78)
 shape = SubResource("CircleShape2D_2xf3b")
 
-[node name="Mouse Head" type="CollisionShape2D" parent="Map/StaticBody2D"]
+[node name="Mouse Head" type="CollisionShape2D" parent="Map/Level 1"]
 position = Vector2(-811.885, 1957.39)
 shape = SubResource("CircleShape2D_0t0gr")
 
-[node name="Box 3" type="CollisionShape2D" parent="Map/StaticBody2D"]
+[node name="Box 3" type="CollisionShape2D" parent="Map/Level 1"]
 position = Vector2(-419.941, 1857.07)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_iveha")
 
-[node name="Light 1" type="CollisionShape2D" parent="Map/StaticBody2D"]
+[node name="Light 1" type="CollisionShape2D" parent="Map/Level 1"]
 position = Vector2(-270.045, 1373.56)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_bttd5")
 
-[node name="Light 2" type="CollisionShape2D" parent="Map/StaticBody2D"]
+[node name="Light 2" type="CollisionShape2D" parent="Map/Level 1"]
 position = Vector2(195.972, 1455.79)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_bttd5")
 
-[node name="Light 3" type="CollisionShape2D" parent="Map/StaticBody2D"]
+[node name="Light 3" type="CollisionShape2D" parent="Map/Level 1"]
 position = Vector2(669.572, 1250.49)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_bttd5")
 
-[node name="Light 4" type="CollisionShape2D" parent="Map/StaticBody2D"]
+[node name="Light 4" type="CollisionShape2D" parent="Map/Level 1"]
 position = Vector2(1124.51, 1581.78)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_bttd5")
 
-[node name="Ruler" type="CollisionShape2D" parent="Map/StaticBody2D"]
+[node name="Ruler" type="CollisionShape2D" parent="Map/Level 1"]
 position = Vector2(1746.67, 1327.24)
 rotation = -0.778417
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_kyobd")
+
+[node name="Level 2" type="StaticBody2D" parent="Map"]
+physics_material_override = SubResource("PhysicsMaterial_30vec")
+
+[node name="Level 2 Floor" type="CollisionShape2D" parent="Map/Level 2"]
+position = Vector2(-126.732, 613.996)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_lwelj")
+
+[node name="Light 1" type="CollisionShape2D" parent="Map/Level 2"]
+position = Vector2(1932.14, 367.281)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_riupp")
+
+[node name="Light 2" type="CollisionShape2D" parent="Map/Level 2"]
+position = Vector2(1416.13, 205.304)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_riupp")
+
+[node name="Light 3" type="CollisionShape2D" parent="Map/Level 2"]
+position = Vector2(-70.1982, 34.995)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_riupp")
+
+[node name="Light 4" type="CollisionShape2D" parent="Map/Level 2"]
+position = Vector2(-1059.18, -130.648)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_riupp")
+
+[node name="Light 5" type="CollisionShape2D" parent="Map/Level 2"]
+position = Vector2(-1446.46, 123.649)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_riupp")
+
+[node name="Color Paste 1" type="CollisionShape2D" parent="Map/Level 2"]
+position = Vector2(438.605, 426.939)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_178q6")
+
+[node name="Paste Corner1" type="CollisionShape2D" parent="Map/Level 2"]
+position = Vector2(246.341, 418.473)
+rotation = 0.715585
+scale = Vector2(1, 1)
+skew = -0.300197
+shape = SubResource("RectangleShape2D_iigsc")
+
+[node name="Color Paste 2" type="CollisionShape2D" parent="Map/Level 2"]
+position = Vector2(-669.739, 409.858)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_yo8nu")
+
+[node name="Paste Corner 2" type="CollisionShape2D" parent="Map/Level 2"]
+position = Vector2(-447.937, 335.953)
+rotation = -0.47822
+scale = Vector2(1, 1)
+skew = 0.47822
+shape = SubResource("RectangleShape2D_cruyf")
+
+[node name="Level 3" type="StaticBody2D" parent="Map"]
+physics_material_override = SubResource("PhysicsMaterial_cgd4f")
+
+[node name="Level 3 Floor (Brush)" type="CollisionShape2D" parent="Map/Level 3"]
+position = Vector2(-1717.17, -975.279)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_vs3eq")
+
+[node name="Brush Head" type="CollisionShape2D" parent="Map/Level 3/Level 3 Floor (Brush)"]
+position = Vector2(270.524, 0.520508)
+shape = SubResource("RectangleShape2D_viknb")
 
 [node name="player" parent="." instance=ExtResource("1_dv6bk")]
