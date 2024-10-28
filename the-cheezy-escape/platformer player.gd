@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-
+@export var speed = 5
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
@@ -19,9 +19,20 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
 	print(direction)
 	
+	if Input.is_action_pressed("ui_left"):
+		velocity.x -= speed
+		$annimation.play("walk_left")
+	
+	elif Input.is_action_pressed("ui_right"):
+		velocity.x += speed
+		$annimation.play("walk_right")
+	else:
+		$annimation.play("idle")
+	
 	if direction:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
 
 	move_and_slide()
