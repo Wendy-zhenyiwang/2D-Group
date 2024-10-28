@@ -6,8 +6,8 @@
 [node name="main" type="Node2D"]
 
 [node name="Map" type="Sprite2D" parent="."]
-position = Vector2(744, -789)
-scale = Vector2(0.428632, 0.428632)
+position = Vector2(877, -914)
+scale = Vector2(0.494499, 0.494499)
 texture = ExtResource("1_5wk2p")
 
 [node name="player" parent="." instance=ExtResource("1_dv6bk")]
