@@ -1,7 +1,7 @@
 [gd_scene load_steps=25 format=3 uid="uid://dtu2o8w8bl423"]
 
-[ext_resource type="Texture2D" uid="uid://ctbqp0v1q863k" path="res://MAP.png" id="1_5wk2p"]
 [ext_resource type="PackedScene" uid="uid://bpxh34uy2f0wy" path="res://player.tscn" id="1_dv6bk"]
+[ext_resource type="Texture2D" uid="uid://b23qytg0qbmxt" path="res://cheesyescapeMAP-02.png" id="1_risps"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4s07l"]
 size = Vector2(85.9048, 4154.66)
@@ -72,18 +72,16 @@ size = Vector2(177.309, 596.833)
 [node name="Map" type="Sprite2D" parent="."]
 position = Vector2(807, -777)
 scale = Vector2(0.428632, 0.428632)
-texture = ExtResource("1_5wk2p")
+texture = ExtResource("1_risps")
 
 [node name="Level 1" type="StaticBody2D" parent="Map"]
 
 [node name="Right Wall" type="CollisionShape2D" parent="Map/Level 1"]
 position = Vector2(2126.32, -1.37476)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_4s07l")
 
 [node name="Left Wall" type="CollisionShape2D" parent="Map/Level 1"]
 position = Vector2(-2132.37, -19.6636)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_rj3j0")
 
 [node name="Level 1 Floor" type="CollisionShape2D" parent="Map/Level 1"]
@@ -100,12 +98,10 @@ shape = SubResource("RectangleShape2D_iveha")
 
 [node name="Mouse Ear Left" type="CollisionShape2D" parent="Map/Level 1"]
 position = Vector2(-1020.86, 1574.94)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_icser")
 
 [node name="Mouse Ear Right" type="CollisionShape2D" parent="Map/Level 1"]
 position = Vector2(-578.585, 1577.11)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_n4g6e")
 
 [node name="Mouse Head" type="CollisionShape2D" parent="Map/Level 1"]
