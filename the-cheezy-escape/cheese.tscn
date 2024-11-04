@@ -1,0 +1,87 @@
+[gd_scene load_steps=14 format=3 uid="uid://deruge1ouu3nu"]
+
+[ext_resource type="Texture2D" uid="uid://bvp3asuvs8cy7" path="res://cheese.png" id="1_ibi8q"]
+[ext_resource type="Texture2D" uid="uid://b42wuep6cr7my" path="res://Collected.png" id="2_fi0ye"]
+[ext_resource type="Script" path="res://cheese.gd" id="3_ky0wd"]
+[ext_resource type="AudioStream" uid="uid://c77f71xlldxwa" path="res://collect.mp3" id="4_2sew6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_huxef"]
+atlas = ExtResource("1_ibi8q")
+region = Rect2(0, 0, 630, 630)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpil3"]
+atlas = ExtResource("2_fi0ye")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wputh"]
+atlas = ExtResource("2_fi0ye")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_un31x"]
+atlas = ExtResource("2_fi0ye")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axfpp"]
+atlas = ExtResource("2_fi0ye")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ox1n3"]
+atlas = ExtResource("2_fi0ye")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivoge"]
+atlas = ExtResource("2_fi0ye")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v3fia"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_huxef")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpil3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wputh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_un31x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axfpp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ox1n3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivoge")
+}],
+"loop": true,
+"name": &"pop",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hin2r"]
+radius = 339.232
+
+[node name="cheese" type="AnimatedSprite2D"]
+position = Vector2(566, -192)
+scale = Vector2(0.081746, 0.081746)
+sprite_frames = SubResource("SpriteFrames_v3fia")
+animation = &"idle"
+autoplay = "idle"
+script = ExtResource("3_ky0wd")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_hin2r")
+
+[node name="collect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_2sew6")

@@ -1,7 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://dtu2o8w8bl423"]
+[gd_scene load_steps=27 format=3 uid="uid://dtu2o8w8bl423"]
 
 [ext_resource type="PackedScene" uid="uid://bpxh34uy2f0wy" path="res://player.tscn" id="1_dv6bk"]
 [ext_resource type="Texture2D" uid="uid://b23qytg0qbmxt" path="res://cheesyescapeMAP-02.png" id="1_risps"]
+[ext_resource type="PackedScene" uid="uid://deruge1ouu3nu" path="res://cheese.tscn" id="3_r6fkg"]
+[ext_resource type="AudioStream" uid="uid://p7sdcgakblpm" path="res://Alexandre Desplat-Obituary.mp3" id="3_tql5j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4s07l"]
 size = Vector2(85.9048, 4154.66)
@@ -113,11 +115,11 @@ position = Vector2(-419.941, 1857.07)
 shape = SubResource("RectangleShape2D_iveha")
 
 [node name="Light 1" type="CollisionShape2D" parent="Map/Level 1"]
-position = Vector2(-270.045, 1373.56)
+position = Vector2(-191.306, 1378.81)
 shape = SubResource("RectangleShape2D_bttd5")
 
 [node name="Light 2" type="CollisionShape2D" parent="Map/Level 1"]
-position = Vector2(195.972, 1455.79)
+position = Vector2(268.295, 1453.46)
 shape = SubResource("RectangleShape2D_bttd5")
 
 [node name="Light 3" type="CollisionShape2D" parent="Map/Level 1"]
@@ -220,4 +222,12 @@ position = Vector2(-58.3251, -1353.14)
 shape = SubResource("RectangleShape2D_t7hvc")
 
 [node name="player" parent="." instance=ExtResource("1_dv6bk")]
-position = Vector2(36, -4)
+position = Vector2(52, 6)
+
+[node name="music" type="AudioStreamPlayer2D" parent="player"]
+stream = ExtResource("3_tql5j")
+autoplay = true
+
+[node name="cheese" parent="." instance=ExtResource("3_r6fkg")]
+position = Vector2(779, 9)
+scale = Vector2(0.1125, 0.1125)
