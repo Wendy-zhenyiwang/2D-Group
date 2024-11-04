@@ -213,14 +213,14 @@ shape = SubResource("RectangleShape2D_yo8nu")
 [node name="Area2D" type="Area2D" parent="Map/Level 2"]
 script = ExtResource("2_jxmrt")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Level 2/Area2D"]
-position = Vector2(1215.49, 464.268)
+[node name="color1" type="CollisionShape2D" parent="Map/Level 2/Area2D"]
+position = Vector2(1213.16, 464.268)
 shape = SubResource("RectangleShape2D_yahoh")
 
 [node name="Area2D2" type="Area2D" parent="Map/Level 2"]
 script = ExtResource("2_jxmrt")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Level 2/Area2D2"]
+[node name="color2" type="CollisionShape2D" parent="Map/Level 2/Area2D2"]
 position = Vector2(-1363.64, 450.27)
 shape = SubResource("RectangleShape2D_3edyr")
 
