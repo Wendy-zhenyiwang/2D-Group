@@ -1,10 +1,11 @@
-[gd_scene load_steps=33 format=3 uid="uid://dtu2o8w8bl423"]
+[gd_scene load_steps=35 format=3 uid="uid://dtu2o8w8bl423"]
 
 [ext_resource type="Texture2D" uid="uid://cr6aft67m1whl" path="res://cheesyescape7.png" id="1_7knim"]
 [ext_resource type="PackedScene" uid="uid://bpxh34uy2f0wy" path="res://player.tscn" id="1_dv6bk"]
 [ext_resource type="Script" path="res://trap area.gd" id="2_jxmrt"]
 [ext_resource type="PackedScene" uid="uid://deruge1ouu3nu" path="res://cheese.tscn" id="3_r6fkg"]
 [ext_resource type="AudioStream" uid="uid://p7sdcgakblpm" path="res://Alexandre Desplat-Obituary.mp3" id="3_tql5j"]
+[ext_resource type="Script" path="res://winning.gd" id="6_aogx3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4s07l"]
 size = Vector2(85.9048, 4154.66)
@@ -84,6 +85,9 @@ size = Vector2(368.199, 41.1614)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3g5va"]
 size = Vector2(2942.25, 82.323)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xj6rw"]
+size = Vector2(52, 51)
 
 [node name="main" type="Node2D"]
 
@@ -285,7 +289,7 @@ position = Vector2(608.914, -863.211)
 shape = SubResource("RectangleShape2D_3g5va")
 
 [node name="player" parent="." instance=ExtResource("1_dv6bk")]
-position = Vector2(12, -27)
+position = Vector2(13, -26)
 
 [node name="music" type="AudioStreamPlayer2D" parent="player"]
 position = Vector2(31, 40)
@@ -307,6 +311,15 @@ position = Vector2(590, -1664)
 scale = Vector2(0.1125, 0.1125)
 animation = &"idle"
 
+[node name="winning" type="Area2D" parent="."]
+position = Vector2(1569, -1518)
+script = ExtResource("6_aogx3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="winning"]
+position = Vector2(19, 12)
+shape = SubResource("RectangleShape2D_xj6rw")
+
 [connection signal="body_entered" from="Map/Level 2/Area2D" to="Map/Level 2/Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="Map/Level 2/Area2D2" to="Map/Level 2/Area2D" method="_on_area_2d_2_body_entered"]
 [connection signal="body_entered" from="trap" to="trap" method="_on_body_entered"]
+[connection signal="body_entered" from="winning" to="winning" method="_on_body_entered"]
