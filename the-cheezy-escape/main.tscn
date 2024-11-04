@@ -1,7 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://dtu2o8w8bl423"]
+[gd_scene load_steps=32 format=3 uid="uid://dtu2o8w8bl423"]
 
 [ext_resource type="PackedScene" uid="uid://bpxh34uy2f0wy" path="res://player.tscn" id="1_dv6bk"]
-[ext_resource type="Texture2D" uid="uid://b23qytg0qbmxt" path="res://cheesyescapeMAP-02.png" id="1_risps"]
+[ext_resource type="Texture2D" uid="uid://bje34wiy2co7l" path="res://cheesyescapeMAP4.png" id="1_ojr16"]
+[ext_resource type="Script" path="res://trap area.gd" id="2_jxmrt"]
 [ext_resource type="PackedScene" uid="uid://deruge1ouu3nu" path="res://cheese.tscn" id="3_r6fkg"]
 [ext_resource type="AudioStream" uid="uid://p7sdcgakblpm" path="res://Alexandre Desplat-Obituary.mp3" id="3_tql5j"]
 
@@ -32,10 +33,13 @@ size = Vector2(292.792, 40.8279)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyobd"]
 size = Vector2(1430.8, 258.273)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhq00"]
+size = Vector2(289.293, 39.661)
+
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_30vec"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lwelj"]
-size = Vector2(3622.32, 125.15)
+size = Vector2(3629.32, 125.15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_riupp"]
 size = Vector2(288.876, 39.995)
@@ -47,10 +51,16 @@ size = Vector2(648.575, 242.632)
 size = Vector2(403.263, 276.324)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yo8nu"]
-size = Vector2(774.891, 300.125)
+size = Vector2(790.888, 300.125)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cruyf"]
 size = Vector2(383.281, 210.638)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yahoh"]
+size = Vector2(660.574, 165.643)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3edyr"]
+size = Vector2(263.63, 200.638)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cgd4f"]
 
@@ -64,17 +74,20 @@ size = Vector2(182.308, 96.3213)
 size = Vector2(3197.72, 133.315)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t7hvc"]
-size = Vector2(289.626, 42.328)
+size = Vector2(289.626, 39.8278)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hfqjk"]
-size = Vector2(177.309, 596.833)
+size = Vector2(461.935, 522.385)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3g5va"]
+size = Vector2(2942.25, 82.323)
 
 [node name="main" type="Node2D"]
 
 [node name="Map" type="Sprite2D" parent="."]
-position = Vector2(807, -777)
+position = Vector2(767, -811)
 scale = Vector2(0.428632, 0.428632)
-texture = ExtResource("1_risps")
+texture = ExtResource("1_ojr16")
 
 [node name="Level 1" type="StaticBody2D" parent="Map"]
 
@@ -107,7 +120,7 @@ position = Vector2(-578.585, 1577.11)
 shape = SubResource("RectangleShape2D_n4g6e")
 
 [node name="Mouse Head" type="CollisionShape2D" parent="Map/Level 1"]
-position = Vector2(-811.885, 1957.39)
+position = Vector2(-793.221, 1938.73)
 shape = SubResource("CircleShape2D_0t0gr")
 
 [node name="Box 3" type="CollisionShape2D" parent="Map/Level 1"]
@@ -119,7 +132,7 @@ position = Vector2(-191.306, 1378.81)
 shape = SubResource("RectangleShape2D_bttd5")
 
 [node name="Light 2" type="CollisionShape2D" parent="Map/Level 1"]
-position = Vector2(268.295, 1453.46)
+position = Vector2(263.629, 1455.79)
 shape = SubResource("RectangleShape2D_bttd5")
 
 [node name="Light 3" type="CollisionShape2D" parent="Map/Level 1"]
@@ -135,19 +148,25 @@ position = Vector2(1746.67, 1327.24)
 rotation = -0.778417
 shape = SubResource("RectangleShape2D_kyobd")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Level 1"]
+position = Vector2(1528.12, 835.215)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_qhq00")
+
 [node name="Level 2" type="StaticBody2D" parent="Map"]
 physics_material_override = SubResource("PhysicsMaterial_30vec")
 
 [node name="Level 2 Floor" type="CollisionShape2D" parent="Map/Level 2"]
-position = Vector2(-266.712, 613.996)
+position = Vector2(-263.212, 613.996)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_lwelj")
 
 [node name="Light 1" type="CollisionShape2D" parent="Map/Level 2"]
-position = Vector2(1936.39, 366.282)
+position = Vector2(2027.38, 573.919)
 shape = SubResource("RectangleShape2D_riupp")
 
 [node name="Light 2" type="CollisionShape2D" parent="Map/Level 2"]
-position = Vector2(1413.8, 205.304)
+position = Vector2(1530.45, 326.621)
 shape = SubResource("RectangleShape2D_riupp")
 
 [node name="Light 3" type="CollisionShape2D" parent="Map/Level 2"]
@@ -159,7 +178,7 @@ position = Vector2(-1059.18, -130.648)
 shape = SubResource("RectangleShape2D_riupp")
 
 [node name="Light 5" type="CollisionShape2D" parent="Map/Level 2"]
-position = Vector2(-1446.46, 123.649)
+position = Vector2(-1446.46, 174.975)
 shape = SubResource("RectangleShape2D_riupp")
 
 [node name="Color Paste 1" type="CollisionShape2D" parent="Map/Level 2"]
@@ -173,7 +192,8 @@ skew = -0.300197
 shape = SubResource("RectangleShape2D_iigsc")
 
 [node name="Color Paste 2" type="CollisionShape2D" parent="Map/Level 2"]
-position = Vector2(-669.739, 409.858)
+position = Vector2(-677.738, 409.858)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_yo8nu")
 
 [node name="Paste Corner 2" type="CollisionShape2D" parent="Map/Level 2"]
@@ -182,15 +202,31 @@ rotation = -0.47822
 skew = 0.47822
 shape = SubResource("RectangleShape2D_cruyf")
 
+[node name="Area2D" type="Area2D" parent="Map/Level 2"]
+script = ExtResource("2_jxmrt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Level 2/Area2D"]
+position = Vector2(1215.49, 464.268)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_yahoh")
+
+[node name="Area2D2" type="Area2D" parent="Map/Level 2"]
+script = ExtResource("2_jxmrt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Level 2/Area2D2"]
+position = Vector2(-1363.64, 450.27)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_3edyr")
+
 [node name="Level 3" type="StaticBody2D" parent="Map"]
 physics_material_override = SubResource("PhysicsMaterial_cgd4f")
 
 [node name="Level 3 Floor (Brush Body)" type="CollisionShape2D" parent="Map/Level 3"]
-position = Vector2(-1717.17, -975.279)
+position = Vector2(-1784.75, -954.198)
 shape = SubResource("RectangleShape2D_vs3eq")
 
 [node name="Brush Head" type="CollisionShape2D" parent="Map/Level 3"]
-position = Vector2(-1444.3, -974.363)
+position = Vector2(-1430.13, -951.865)
 shape = SubResource("RectangleShape2D_3ci8e")
 
 [node name="Level 3 Floor (Rightside)" type="CollisionShape2D" parent="Map/Level 3"]
@@ -198,28 +234,39 @@ position = Vector2(482.181, -759.56)
 shape = SubResource("RectangleShape2D_y5upx")
 
 [node name="Light 1" type="CollisionShape2D" parent="Map/Level 3"]
-position = Vector2(-1262.32, -1437.3)
+position = Vector2(-1073.18, -1437.13)
 shape = SubResource("RectangleShape2D_t7hvc")
 
 [node name="Light 2" type="CollisionShape2D" parent="Map/Level 3"]
-position = Vector2(-692.902, -1353.14)
+position = Vector2(-1971.39, -1059.18)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_t7hvc")
 
 [node name="Light 3" type="CollisionShape2D" parent="Map/Level 3"]
-position = Vector2(-58.3251, -1353.14)
+position = Vector2(1850.07, -1509.45)
 shape = SubResource("RectangleShape2D_t7hvc")
 
 [node name="Light 4" type="CollisionShape2D" parent="Map/Level 3"]
-position = Vector2(-58.3251, -1353.14)
+position = Vector2(363.948, -1432.46)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_t7hvc")
 
 [node name="Colum1" type="CollisionShape2D" parent="Map/Level 3"]
-position = Vector2(457.269, -998.526)
+position = Vector2(1096.51, -1166.4)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_hfqjk")
 
 [node name="Light 5" type="CollisionShape2D" parent="Map/Level 3"]
-position = Vector2(-58.3251, -1353.14)
+position = Vector2(-135.314, -1656.43)
 shape = SubResource("RectangleShape2D_t7hvc")
+
+[node name="Area2D" type="Area2D" parent="Map/Level 3"]
+script = ExtResource("2_jxmrt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Level 3/Area2D"]
+position = Vector2(609.913, -864.044)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_3g5va")
 
 [node name="player" parent="." instance=ExtResource("1_dv6bk")]
 position = Vector2(52, 6)
@@ -231,3 +278,6 @@ autoplay = true
 [node name="cheese" parent="." instance=ExtResource("3_r6fkg")]
 position = Vector2(779, 9)
 scale = Vector2(0.1125, 0.1125)
+
+[connection signal="body_entered" from="Map/Level 2/Area2D" to="Map/Level 2/Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Map/Level 2/Area2D2" to="Map/Level 2/Area2D" method="_on_area_2d_2_body_entered"]
