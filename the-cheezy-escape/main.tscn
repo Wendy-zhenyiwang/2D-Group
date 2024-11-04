@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dtu2o8w8bl423"]
+[gd_scene load_steps=33 format=3 uid="uid://dtu2o8w8bl423"]
 
 [ext_resource type="Texture2D" uid="uid://cr6aft67m1whl" path="res://cheesyescape7.png" id="1_7knim"]
 [ext_resource type="PackedScene" uid="uid://bpxh34uy2f0wy" path="res://player.tscn" id="1_dv6bk"]
@@ -75,6 +75,12 @@ size = Vector2(289.626, 39.8278)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hfqjk"]
 size = Vector2(541.255, 599.58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tpnt7"]
+size = Vector2(198.305, 197.514)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sjgfx"]
+size = Vector2(368.199, 41.1614)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3g5va"]
 size = Vector2(2942.25, 82.323)
@@ -245,10 +251,6 @@ shape = SubResource("RectangleShape2D_t7hvc")
 position = Vector2(-1971.39, -1059.18)
 shape = SubResource("RectangleShape2D_t7hvc")
 
-[node name="Light 3" type="CollisionShape2D" parent="Map/Level 3"]
-position = Vector2(1850.07, -1509.45)
-shape = SubResource("RectangleShape2D_t7hvc")
-
 [node name="Light 4" type="CollisionShape2D" parent="Map/Level 3"]
 position = Vector2(363.948, -1432.46)
 shape = SubResource("RectangleShape2D_t7hvc")
@@ -261,17 +263,32 @@ shape = SubResource("RectangleShape2D_hfqjk")
 position = Vector2(-135.314, -1656.43)
 shape = SubResource("RectangleShape2D_t7hvc")
 
+[node name="Left Ear" type="CollisionShape2D" parent="Map/Level 3"]
+position = Vector2(842.214, -1495.46)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_tpnt7")
+
+[node name="Right Ear" type="CollisionShape2D" parent="Map/Level 3"]
+position = Vector2(1357.81, -1495.46)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_tpnt7")
+
+[node name="Winning Stage" type="CollisionShape2D" parent="Map/Level 3"]
+position = Vector2(1894.4, -1509.45)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_sjgfx")
+
 [node name="trap" type="Area2D" parent="."]
 position = Vector2(767, -811)
 scale = Vector2(0.428632, 0.428632)
 script = ExtResource("2_jxmrt")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="trap"]
-position = Vector2(609.913, -864.044)
+[node name="Nails" type="CollisionShape2D" parent="trap"]
+position = Vector2(608.914, -863.211)
 shape = SubResource("RectangleShape2D_3g5va")
 
 [node name="player" parent="." instance=ExtResource("1_dv6bk")]
-position = Vector2(8, -27)
+position = Vector2(15, -24)
 
 [node name="music" type="AudioStreamPlayer2D" parent="player"]
 position = Vector2(31, 40)
