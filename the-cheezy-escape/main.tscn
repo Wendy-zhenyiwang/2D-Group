@@ -265,17 +265,14 @@ shape = SubResource("RectangleShape2D_t7hvc")
 
 [node name="Left Ear" type="CollisionShape2D" parent="Map/Level 3"]
 position = Vector2(842.214, -1495.46)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_tpnt7")
 
 [node name="Right Ear" type="CollisionShape2D" parent="Map/Level 3"]
 position = Vector2(1357.81, -1495.46)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_tpnt7")
 
 [node name="Winning Stage" type="CollisionShape2D" parent="Map/Level 3"]
 position = Vector2(1894.4, -1509.45)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_sjgfx")
 
 [node name="trap" type="Area2D" parent="."]
@@ -288,7 +285,7 @@ position = Vector2(608.914, -863.211)
 shape = SubResource("RectangleShape2D_3g5va")
 
 [node name="player" parent="." instance=ExtResource("1_dv6bk")]
-position = Vector2(15, -24)
+position = Vector2(12, -27)
 
 [node name="music" type="AudioStreamPlayer2D" parent="player"]
 position = Vector2(31, 40)
@@ -298,6 +295,17 @@ autoplay = true
 [node name="cheese" parent="." instance=ExtResource("3_r6fkg")]
 position = Vector2(783, -41)
 scale = Vector2(0.1125, 0.1125)
+animation = &"idle"
+
+[node name="cheese2" parent="." instance=ExtResource("3_r6fkg")]
+position = Vector2(911, -1026)
+scale = Vector2(0.1125, 0.1125)
+animation = &"idle"
+
+[node name="cheese3" parent="." instance=ExtResource("3_r6fkg")]
+position = Vector2(590, -1664)
+scale = Vector2(0.1125, 0.1125)
+animation = &"idle"
 
 [connection signal="body_entered" from="Map/Level 2/Area2D" to="Map/Level 2/Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="Map/Level 2/Area2D2" to="Map/Level 2/Area2D" method="_on_area_2d_2_body_entered"]

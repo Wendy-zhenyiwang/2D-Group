@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=3 uid="uid://3jj6qrir2hlj"]
+
+[ext_resource type="Texture2D" uid="uid://bvp3asuvs8cy7" path="res://cheese.png" id="1_1jkf3"]
+[ext_resource type="Texture2D" uid="uid://b42wuep6cr7my" path="res://Collected.png" id="2_rmsbd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrced"]
+atlas = ExtResource("1_1jkf3")
+region = Rect2(0, 0, 630, 630)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmvuj"]
+atlas = ExtResource("2_rmsbd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_td4qc"]
+atlas = ExtResource("2_rmsbd")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2cl0"]
+atlas = ExtResource("2_rmsbd")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ch0vg"]
+atlas = ExtResource("2_rmsbd")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ahow"]
+atlas = ExtResource("2_rmsbd")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w40w6"]
+atlas = ExtResource("2_rmsbd")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dtfg8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrced")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmvuj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_td4qc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2cl0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ch0vg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ahow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w40w6")
+}],
+"loop": true,
+"name": &"pop",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nhgd7"]
+
+[node name="cheese2" type="AnimatedSprite2D"]
+position = Vector2(-3902.22, -6151.11)
+sprite_frames = SubResource("SpriteFrames_dtfg8")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_nhgd7")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
