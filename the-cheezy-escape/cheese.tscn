@@ -74,7 +74,7 @@ radius = 339.232
 position = Vector2(566, -192)
 scale = Vector2(0.081746, 0.081746)
 sprite_frames = SubResource("SpriteFrames_v3fia")
-animation = &"idle"
+animation = &"pop"
 autoplay = "idle"
 script = ExtResource("3_ky0wd")
 
@@ -85,3 +85,5 @@ shape = SubResource("CircleShape2D_hin2r")
 
 [node name="collect" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_2sew6")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
